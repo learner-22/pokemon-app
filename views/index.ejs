@@ -10,13 +10,14 @@
     
     <h1> <%= pageHeader %></h1>
 
-    <div >
+    <ul >
         <% data.map((pokemon,index) => { %>
-           <%= pokemon.name %> <br>
+          <li>
+            <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %> <br>
            <img src = <%=pokemon.img %> width ="400" height="300" >
 
-           <hr>
+        </li>
         <% }) %>
-    </div>
+    </ul>
 </body>
 </html>
