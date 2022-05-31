@@ -14,8 +14,10 @@
     <ul >
         <% data.map((pokemon,index) => { %>
           <li>
-          <h2>  <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %> </h2> <br>
-           <img src =  <%=` ${pokemon.img}.jpg` %>  width ="400" height="300" >
+         <h2> <%= index %> </h2> 
+             
+            <a href ="/pokemon/<%= index %>" > <h2> <%= pokemon.name[0].toUpperCase() + pokemon.name.substring(1) %> </h2></a> <br>
+         <img src =  <%=` ${pokemon.img}.jpg` %>  width ="400" height="300" >
             <a href ="/pokemon/<%= index %>" > Click here to catch it </a>
             <hr>
         </li>
