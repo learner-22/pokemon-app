@@ -8,6 +8,10 @@ const PORT=3000
 const getData=require('./models/pokemon.js')
 const pokemon = getData()
 
+//setup view engine
+app.set('view engine', 'ejs') 
+app.set('views', './Views')
+
 app.get('/',(req,res)=>{
     
     res.send('<h1>Welcome to Pokemon App !! </h1>')
@@ -16,7 +20,11 @@ app.get('/',(req,res)=>{
 
 app.get('/pokemon',(req,res)=>{
     
-    res.send(pokemon)
+    res.render('index',{
+        pageTitle: 'Pokemon App', 
+        pageHeader: 'See All the Pokemon',
+        data: pokemon
+    })
    
 })
 app.listen(PORT,()=>{
