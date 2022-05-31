@@ -28,8 +28,17 @@ app.get('/pokemon',(req,res)=>{
    
 })
 
+let image =''
 app.get('/pokemon/:id',(req,res)=>{
-    res.send(req.params.id)
+//   res.send(req.params.id)
+   console.log(Number(req.params.id))
+   console.log( pokemon[Number(req.params.id)].img.concat('.jpg') )
+    res.render('show',{
+    pageTitle: 'Pokemon App', 
+    pageHeader: " Gotta Catch 'Em All'",
+    data: pokemon[Number(req.params.id)],
+    image : pokemon[Number(req.params.id)].img.concat('.jpg')
+})
 })
 
 app.listen(PORT,()=>{
