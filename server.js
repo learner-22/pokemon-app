@@ -8,6 +8,8 @@ const PORT=3000
 const getData=require('./models/pokemon.js')
 const pokemon = getData()
 
+//Add css file 
+app.use(express.static('./'))
 //setup view engine
 app.set('view engine', 'ejs') 
 app.set('views', './Views')
